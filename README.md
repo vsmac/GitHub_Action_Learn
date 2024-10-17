@@ -41,16 +41,40 @@ step -7   #  go to main of repository and go to "Action"
 
 step -8   #  select the workflows from left side and check the logs and result
 
-#  terms
-workflows   #   collection of job defined in a YAML file
-name:
+#  simple workflows in github action
+name: CI Workflow  # Name of your workflow
 
-Event      #   any activity in the repository that can trigger a workflows
 on:
+  push:            # Trigger the workflow when code is pushed
+    branches:
+      - main       # Specify which branch should trigger the workflow
 
-jobs   #  collection of steps
 jobs:
+  build:           # Name of the job
+    runs-on: ubuntu-latest  # Specify the virtual environment to use
 
-steps   #   actoin to be taken command script ect.
-step:
+    steps:
+
+    - name: Install nginx
+      run: sudo apt install nginx -y   # Example command to install nginx
+
+    - name: Run tests
+      run: npm test  # Example command to run your test suite
+
+Name:   #    This is the name of your workflow (CI Workflow in this case)
+
+On:     #    This defines when the workflow should be triggered. The example above triggers the workflow on any push to the main branch
+
+push:   #    Trigger the workflow when code is pushed
+
+-main   #    Specify which branch should trigger the workflow
+
+jobs:   #    Each workflow can consist of multiple jobs. Jobs are executed on virtual machines provided by GitHub
+
+build:  #    name of the job
+
+runs-on: ubuntu-latest:    #   Specifies the environment in which the job will run. The example uses ubuntu-latest, but you can also choose from environments like windows-latest or macos-latest
+
+ steps:    #     Jobs are broken down into steps. Each step defines an action or a command that runs during the job
+
 
