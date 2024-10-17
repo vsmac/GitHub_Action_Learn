@@ -24,14 +24,14 @@ Parallel Execution    #   Run jobs in parallel to speed up the development proce
 
 Predefined Actions    #    Utilize a marketplace of predefined actions to speed up development and avoid reinventing the wheel
 
-#  demo
+#  steps
 step -1   #  sign up or login to github.com
 
 step -2   #  create a new repository you can name it anything (github-action)
 
 step -3   #  in the folder create a folder .github/workflows (this folder fixed)
 
-step -4   #  in the folder create a YMAL file with extension .yml
+step -4   #  in the folder create a YAML file with extension .yml
 
 step -5   #  add the workflows content in the file
 
@@ -40,4 +40,17 @@ step -6   #  add,commit and push the changes
 step -7   #  go to main of repository and go to "Action"
 
 step -8   #  select the workflows from left side and check the logs and result
+
+#  terms
+workflows   #   collection of job defined in a YAML file
+name:
+
+Event      #   any activity in the repository that can trigger a workflows
+on:
+
+jobs   #  collection of steps
+jobs:
+
+steps   #   actoin to be taken command script ect.
+step:
 
